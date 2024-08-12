@@ -1,3 +1,6 @@
+## DESCRIPTION
+Modern Node.js API with class-based controllers, async operations, and security best practices. Utilizes PostgreSQL, Prisma, Redis, and Cloudinary. Features OTP verification, JWT authentication, rate limiting, and an queue based email sending system via Nodemailer and BullMQ, with Winston logging.
+
 - **Modern Node.js Application:** Utilizes class-based controllers, asynchronous operations, validation, and security practices.
 - **Database Management:** Leverages PostgreSQL with Prisma.
 - **Caching:** Implements Redis for efficient data caching.
