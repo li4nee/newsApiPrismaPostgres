@@ -2,7 +2,7 @@
 - **Database Management:** Leverages PostgreSQL with Prisma.
 - **Caching:** Implements Redis for efficient data caching.
 - **Image Storage:** Uses Cloudinary for storing and managing images.
-- **Email Handling:** Employs an asynchronous job queue with BullMQ for robust email management.
+- **Email Handling:** Employs an asynchronous job queue with BullMQ for robust email management with email being sent through NodeMailer.
 - **Rate Limiting:** Includes rate limiting to prevent abuse and manage request loads.
 - **Security Features For Registration:**
   - **Password Hashing:** Uses bcrypt for secure password hashing.
