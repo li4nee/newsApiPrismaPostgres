@@ -4,6 +4,8 @@
 - **Image Storage:** Uses Cloudinary for storing and managing images.
 - **Email Handling:** Employs an asynchronous job queue with BullMQ for robust email management.
 - **Rate Limiting:** Includes rate limiting to prevent abuse and manage request loads.
-- **Key Features:**
-  - OTP verification for user registration.
-  - Logging via Winston for error tracking and debugging.
+- **Security Features:**
+  - **Password Hashing:** Uses bcrypt for secure password hashing.
+  - **JWT Authentication:** Implements JWT for secure user authentication.
+  - **OTP Verification:** Provides OTP-based verification for user registration.
+- **Logging:** Utilizes Winston for comprehensive error tracking and debugging.
