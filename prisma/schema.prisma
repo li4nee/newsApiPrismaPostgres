@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(200)
+  email     String   @unique @db.VarChar(200)
+  password  String
+  profile   String   @default("https://res.cloudinary.com/dd75jq2s9/image/upload/v1723286560/zxvexbvgumne6xn1u0db.png")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt()
+  News      News[]
+  otp         String?   @db.VarChar(6)
+  otpExpires  DateTime?
+  isValidated Boolean   @default(false)
+}
+
+model News {
+  id         Int      @id @default(autoincrement())
+  user_id    Int
+  user       User     @relation(fields: [user_id], references: [id])
+  title      String   @db.VarChar(300)
+  content    String
+  image      String   @db.VarChar(150)
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt()
+}
